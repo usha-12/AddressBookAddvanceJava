@@ -7,6 +7,7 @@ public class AddressBook {
     Scanner sc = new Scanner(System.in);
     Contacts contacts;
     ArrayList<Contacts> list = new ArrayList<>();
+
     public void addNewContact() {
         contacts = new Contacts();
         System.out.println("----------------------------------");
@@ -59,6 +60,7 @@ public class AddressBook {
             list.add(contacts);
         }
     }
+
     public void displayContact() {
         if (contacts.getFirstname() == null) {
             System.out.println("Contact Not Found");
@@ -68,8 +70,9 @@ public class AddressBook {
             }
         }
     }
+
     public void editContact() {
-        contacts=new Contacts();
+        contacts = new Contacts();
         System.out.println("Enter the First Name : ");
         String firstName = sc.next();
         if (firstName.equalsIgnoreCase(contacts.getFirstname())) {
@@ -98,23 +101,38 @@ public class AddressBook {
             System.out.println("The Entered Contact Name is Not Available in Address Book");
         }
     }
+
     public void deleteContact() {
         System.out.println("Enter the First Name : ");
         String firstName = sc.next();
         if (firstName.equalsIgnoreCase(contacts.getFirstname())) {
             list.remove(contacts);
             System.out.println("Contact Deleted Successfully-------!!!");
-        }else {
+        } else {
             System.out.println("Not Found");
         }
     }
-    public  void searchByCity() {
+
+    public void searchByCity() {
         System.out.println("Enter city Name:");
         String city = sc.next();
         list.stream().filter(contacts -> contacts.getCity().equalsIgnoreCase(city)).forEach(contacts -> System.out.println(contacts));
     }
+
     public void searchByState() {
         System.out.println("Enter State Name:");
+        String state = sc.next();
+        list.stream().filter(contacts -> contacts.getState().equalsIgnoreCase(state)).forEach(contacts -> System.out.println(contacts));
+    }
+
+    public void countByCity() {
+        System.out.println("Enter the city Name:");
+        String city = sc.next();
+        list.stream().filter(contacts -> contacts.getCity().equalsIgnoreCase(city)).forEach(contacts -> System.out.println(contacts));
+    }
+
+    public void countByState() {
+        System.out.println("Enter the State Name:");
         String state = sc.next();
         list.stream().filter(contacts -> contacts.getState().equalsIgnoreCase(state)).forEach(contacts -> System.out.println(contacts));
     }
