@@ -129,11 +129,15 @@ public class AddressBook {
         System.out.println("Enter the city Name:");
         String city = sc.next();
         list.stream().filter(contacts -> contacts.getCity().equalsIgnoreCase(city)).forEach(contacts -> System.out.println(contacts));
+        long count = list.stream().filter(n -> n.getCity().equalsIgnoreCase(city)).count();
+        System.out.println("Total number of Persons in city " + city + ":" + count);
     }
 
     public void countByState() {
         System.out.println("Enter the State Name:");
         String state = sc.next();
         list.stream().filter(contacts -> contacts.getState().equalsIgnoreCase(state)).forEach(contacts -> System.out.println(contacts));
+        long count = list.stream().filter(n -> n.getState().equalsIgnoreCase(state)).count();
+        System.out.println("Total number of Persons in city " + state + ":" + count);
     }
 }
