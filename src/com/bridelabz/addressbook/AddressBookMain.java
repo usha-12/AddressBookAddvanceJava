@@ -11,6 +11,8 @@ public class AddressBookMain {
         do {
             System.out.println("1. Add New Contact\n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5." +
                     " Search by State\n6. Sorted List\n7. New AddressBook \n8. Exit");
+            System.out.println("1. Add New Contact\n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5. Search by State\n6. Sorted List\n 7. Exit");
+
             System.out.println("Enter Choice: ");
             choice = sc.nextInt();
 
@@ -118,12 +120,18 @@ public class AddressBookMain {
                     } while (choice != 3) ;
                     break;
                 case 8:
+                    addressBook.sortedList();
+                    break;
+                case 7:
                     System.out.println("Thank you for Using Address Book");
                 default:
                     System.out.println("Please Select between 1 to 8 only.");
                     break;
             }
         }
+
         while( choice != 8 );
+        while( choice != 7 );
+
     }
     }

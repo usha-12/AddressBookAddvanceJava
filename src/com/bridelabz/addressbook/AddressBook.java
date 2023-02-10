@@ -1,8 +1,11 @@
 package com.bridelabz.addressbook;
 
-import java.util.*;
+import java.util
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
-
 public class AddressBook {
     Scanner sc = new Scanner(System.in);
     Contacts contacts;
@@ -158,6 +161,10 @@ public class AddressBook {
     public void sortedList() {
         List<Contacts> sortedlist = list.stream().sorted(Comparator.comparing(contacts -> contacts.getFirstname())).collect(Collectors.toList());
         for (Contacts details : sortedlist) {
+
+    public void sortedList(){
+        List<Contacts> sortedlist=list.stream().sorted(Comparator.comparing(contacts ->contacts.getFirstname())).collect(Collectors.toList());
+        for (Contacts details:sortedlist) {
             System.out.println(details.toString());
         }
     }
