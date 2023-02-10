@@ -67,6 +67,7 @@ public class AddressBookMain {
                             case 3:
                                 System.out.println("Thank you for using AddressBook");
                                 break;
+                                
                             default:
                                 System.out.println("Please Select Valid Input");
                                 break;
