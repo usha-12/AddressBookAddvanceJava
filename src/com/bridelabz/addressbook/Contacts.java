@@ -84,5 +84,6 @@ public class Contacts {
                 "Pin :" + Pin +','+
                 "PhoneNumber :" +PhoneNumber +','+
                 "Email :" + email;
+
     }
 }
