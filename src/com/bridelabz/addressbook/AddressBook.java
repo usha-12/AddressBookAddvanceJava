@@ -1,7 +1,10 @@
 package com.bridelabz.addressbook;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class AddressBook {
     Scanner sc = new Scanner(System.in);
@@ -139,5 +142,11 @@ public class AddressBook {
         list.stream().filter(contacts -> contacts.getState().equalsIgnoreCase(state)).forEach(contacts -> System.out.println(contacts));
         long count = list.stream().filter(n -> n.getState().equalsIgnoreCase(state)).count();
         System.out.println("Total number of Persons in city " + state + ":" + count);
+    }
+    public void sortedList(){
+        List<Contacts> sortedlist=list.stream().sorted(Comparator.comparing(contacts ->contacts.getFirstname())).collect(Collectors.toList());
+        for (Contacts details:sortedlist) {
+            System.out.println(details.toString());
+        }
     }
 }

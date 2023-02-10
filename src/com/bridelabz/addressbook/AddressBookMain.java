@@ -9,7 +9,7 @@ public class AddressBookMain {
         int choice;
         AddressBook addressBook = new AddressBook();
         do {
-            System.out.println("1. Add New Contact\n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5. Search by State\n6. Exit");
+            System.out.println("1. Add New Contact\n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5. Search by State\n6. Sorted List\n 7. Exit");
             System.out.println("Enter Choice: ");
             choice =sc.nextInt();
 
@@ -69,13 +69,15 @@ public class AddressBookMain {
                         }
                     }while (choice!=3);
                 case 6:
-                    System.out.println("Thank You for Using Address Book.");
+                    addressBook.sortedList();
                     break;
+                case 7:
+                    System.out.println("Thank you for Using Address Book");
                 default:
                     System.out.println("Please Select between 1 to 6 only.");
                     break;
             }
         }
-        while( choice != 6 );
+        while( choice != 7 );
     }
     }
